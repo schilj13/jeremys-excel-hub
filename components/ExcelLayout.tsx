@@ -23,6 +23,10 @@ export default function ExcelLayout({ children }: { children: React.ReactNode })
   const [menuOpen, setMenuOpen] = useState(false)
   const currentPage = NAV.find(n => n.href === pathname)?.label ?? 'Home'
 
+  if (pathname.startsWith('/lp/')) {
+    return <>{children}</>
+  }
+
   return (
     <div
       className="flex flex-col h-screen overflow-hidden select-none"
