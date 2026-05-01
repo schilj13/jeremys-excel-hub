@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Free HR Excel Toolkit — Jeremy's Excel Hub",
+  title: "Free HR Excel Toolkit — Jeremy Excel",
   description:
     'Get a free HR & Employee Management spreadsheet plus weekly Excel tips for HR managers and small business owners. Instant download.',
 }
@@ -17,7 +17,7 @@ export default function HRLandingPage() {
           <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
             <span className="text-[#217346] font-black text-sm leading-none">X</span>
           </div>
-          <span className="text-white font-semibold text-sm">Jeremy&apos;s Excel Hub</span>
+          <span className="text-white font-semibold text-sm">Jeremy Excel</span>
         </Link>
       </header>
 
@@ -214,7 +214,7 @@ export default function HRLandingPage() {
       {/* Footer */}
       <footer className="px-4 py-6 text-center border-t border-[#e8e8e8]">
         <p className="text-xs text-gray-400">
-          © {new Date().getFullYear()} Jeremy&apos;s Excel Hub ·{' '}
+          © {new Date().getFullYear()} Jeremy Excel ·{' '}
           <Link href="/" className="hover:text-[#217346] transition-colors">Visit the site</Link>
         </p>
       </footer>

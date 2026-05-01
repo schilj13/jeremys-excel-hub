@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import TemplateGrid from '../../components/TemplateGrid'
 
 export const metadata: Metadata = {
-  title: "Excel Templates | Jeremy's Excel Hub",
+  title: "Excel Templates | Jeremy Excel",
   description:
     'Premium Excel templates for HR, employee management, personal finance, and fitness. Instant download from Etsy. Works on Mac and PC.',
 }

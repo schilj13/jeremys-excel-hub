@@ -39,10 +39,10 @@ export default function ExcelLayout({ children }: { children: React.ReactNode })
             <span className="text-[#217346] font-black text-[11px] leading-none">X</span>
           </div>
           <span className="text-[12px] truncate hidden xs:block">
-            Jeremy&apos;s Excel Hub
+            Jeremy Excel
           </span>
           <span className="text-[12px] truncate xs:hidden">
-            Excel Hub
+            Jeremy Excel
           </span>
           <span className="text-[11px] text-green-200 truncate hidden sm:block">— {currentPage}</span>
         </div>

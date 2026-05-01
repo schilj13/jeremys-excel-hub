@@ -3,7 +3,7 @@ import './globals.css'
 import ExcelLayout from '../components/ExcelLayout'
 
 export const metadata: Metadata = {
-  title: "Jeremy's Excel Hub",
+  title: "Jeremy Excel",
   description:
     'Master Excel. Build your business. Free tutorials, premium templates, and 1-on-1 coaching.',
 }

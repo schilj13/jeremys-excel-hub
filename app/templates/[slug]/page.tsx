@@ -17,7 +17,7 @@ export async function generateMetadata({
   const template = TEMPLATES.find(t => t.slug === slug)
   if (!template) return {}
   return {
-    title: `${template.name} | Jeremy's Excel Hub`,
+    title: `${template.name} | Jeremy Excel`,
     description: template.description.slice(0, 160),
   }
 }
