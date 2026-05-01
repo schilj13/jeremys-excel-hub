@@ -62,7 +62,7 @@ export default async function TemplatePage({
             src={template.image}
             alt={template.name}
             fill
-            className="object-cover object-top"
+            className="object-contain"
             sizes="(max-width: 768px) 100vw, 800px"
             priority
           />
