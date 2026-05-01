@@ -10,14 +10,12 @@ export async function POST(req: NextRequest) {
   const formId = process.env.KIT_FORM_ID
   const apiKey = process.env.KIT_API_KEY
 
-  const res = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
+  const res = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      email_address: email,
+      api_key: apiKey,
+      email,
       ...(firstName ? { first_name: firstName } : {}),
     }),
   })

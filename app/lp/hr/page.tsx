@@ -45,6 +45,7 @@ function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
           onChange={e => setFirstName(e.target.value)}
           placeholder="First name (optional)"
           className="w-full border border-[#d1d1d1] rounded px-4 py-3 text-sm outline-none focus:border-[#217346] focus:ring-1 focus:ring-[#217346] transition-colors"
+          suppressHydrationWarning
         />
         <input
           type="email"
@@ -53,6 +54,7 @@ function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
           placeholder="your@email.com"
           required
           className="w-full border border-[#d1d1d1] rounded px-4 py-3 text-sm outline-none focus:border-[#217346] focus:ring-1 focus:ring-[#217346] transition-colors"
+          suppressHydrationWarning
         />
         <button
           type="submit"
@@ -78,6 +80,7 @@ function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
         placeholder="your@email.com"
         required
         className="w-full rounded px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-white"
+        suppressHydrationWarning
       />
       <button
         type="submit"
