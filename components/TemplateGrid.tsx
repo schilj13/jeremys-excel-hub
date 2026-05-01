@@ -11,7 +11,7 @@ function TemplateCard({ template }: { template: Template }) {
   return (
     <div className="border border-[#d1d1d1] rounded overflow-hidden hover:border-[#217346] hover:shadow-md transition-all group bg-white flex flex-col">
       {/* Thumbnail */}
-      <div className="relative aspect-[4/3] bg-[#f2f2f2] overflow-hidden">
+      <Link href={`/templates/${template.slug}`} className="relative aspect-[4/3] bg-[#f2f2f2] overflow-hidden block">
         <Image
           src={template.image}
           alt={template.name}
@@ -38,7 +38,7 @@ function TemplateCard({ template }: { template: Template }) {
             {savings}% OFF
           </span>
         </div>
-      </div>
+      </Link>
 
       {/* Card body */}
       <div className="p-3 flex flex-col flex-1">
