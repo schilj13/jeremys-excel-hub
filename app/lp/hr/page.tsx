@@ -1,10 +1,97 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 
-export const metadata: Metadata = {
-  title: "Free HR Excel Toolkit — Jeremy Excel",
-  description:
-    'Get a free HR & Employee Management spreadsheet plus weekly Excel tips for HR managers and small business owners. Instant download.',
+import Link from 'next/link'
+import { useState } from 'react'
+
+function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
+  const [firstName, setFirstName] = useState('')
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, firstName }),
+      })
+      if (!res.ok) throw new Error()
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className={`text-center py-4 ${variant === 'bottom' ? 'text-white' : 'text-[#217346]'}`}>
+        <p className="text-2xl mb-1">🎉</p>
+        <p className="font-bold text-lg">You&apos;re in!</p>
+        <p className={`text-sm mt-1 ${variant === 'bottom' ? 'text-green-100' : 'text-gray-600'}`}>
+          Check your inbox — the template is on its way.
+        </p>
+      </div>
+    )
+  }
+
+  if (variant === 'hero') {
+    return (
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <input
+          type="text"
+          value={firstName}
+          onChange={e => setFirstName(e.target.value)}
+          placeholder="First name (optional)"
+          className="w-full border border-[#d1d1d1] rounded px-4 py-3 text-sm outline-none focus:border-[#217346] focus:ring-1 focus:ring-[#217346] transition-colors"
+        />
+        <input
+          type="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder="your@email.com"
+          required
+          className="w-full border border-[#d1d1d1] rounded px-4 py-3 text-sm outline-none focus:border-[#217346] focus:ring-1 focus:ring-[#217346] transition-colors"
+        />
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="w-full bg-[#217346] hover:bg-[#185a34] disabled:opacity-60 text-white font-semibold py-3 rounded text-sm transition-colors"
+        >
+          {status === 'loading' ? 'Sending…' : 'Send Me the Free Template →'}
+        </button>
+        {status === 'error' && (
+          <p className="text-red-500 text-xs text-center">Something went wrong — please try again.</p>
+        )}
+        <p className="text-[11px] text-gray-400 text-center">No spam. Unsubscribe anytime. Your email is safe.</p>
+      </form>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        required
+        className="w-full rounded px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-white"
+      />
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="w-full bg-white text-[#217346] font-bold py-3 rounded text-sm hover:bg-green-50 disabled:opacity-60 transition-colors"
+      >
+        {status === 'loading' ? 'Sending…' : 'Send Me the Free Template →'}
+      </button>
+      {status === 'error' && (
+        <p className="text-red-300 text-xs text-center">Something went wrong — please try again.</p>
+      )}
+      <p className="text-green-200 text-[11px] text-center">No spam. Unsubscribe anytime.</p>
+    </form>
+  )
 }
 
 export default function HRLandingPage() {
@@ -35,45 +122,12 @@ export default function HRLandingPage() {
             Get a free HR &amp; Employee Management spreadsheet — handles payroll tracking, attendance, hiring, and onboarding in one file. No software subscription. No learning curve. Just Excel.
           </p>
 
-          {/* Form */}
+          {/* Hero form */}
           <div className="bg-white border border-[#d1d1d1] rounded-xl shadow-sm p-6 max-w-md mx-auto">
             <p className="text-sm font-semibold text-gray-800 mb-4">
               Enter your email to get instant access:
             </p>
-
-            {/*
-              KIT FORM: Replace the action URL below with your Kit form action URL.
-              It will look like: https://app.kit.com/forms/YOUR_FORM_ID/subscriptions
-            */}
-            <form
-              action="#"
-              method="post"
-              className="flex flex-col gap-3"
-            >
-              <input
-                type="text"
-                name="fields[first_name]"
-                placeholder="First name (optional)"
-                className="w-full border border-[#d1d1d1] rounded px-4 py-3 text-sm outline-none focus:border-[#217346] focus:ring-1 focus:ring-[#217346] transition-colors"
-              />
-              <input
-                type="email"
-                name="email_address"
-                placeholder="your@email.com"
-                required
-                className="w-full border border-[#d1d1d1] rounded px-4 py-3 text-sm outline-none focus:border-[#217346] focus:ring-1 focus:ring-[#217346] transition-colors"
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#217346] hover:bg-[#185a34] text-white font-semibold py-3 rounded text-sm transition-colors"
-              >
-                Send Me the Free Template →
-              </button>
-            </form>
-
-            <p className="text-[11px] text-gray-400 mt-3 text-center">
-              No spam. Unsubscribe anytime. Your email is safe.
-            </p>
+            <SubscribeForm variant="hero" />
           </div>
         </div>
       </section>
@@ -192,22 +246,7 @@ export default function HRLandingPage() {
           <p className="text-green-100 text-sm mb-6">
             Join HR managers and small business owners who are running HR in Excel — for free.
           </p>
-          <form action="#" method="post" className="flex flex-col gap-3">
-            <input
-              type="email"
-              name="email_address"
-              placeholder="your@email.com"
-              required
-              className="w-full rounded px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-white"
-            />
-            <button
-              type="submit"
-              className="w-full bg-white text-[#217346] font-bold py-3 rounded text-sm hover:bg-green-50 transition-colors"
-            >
-              Send Me the Free Template →
-            </button>
-          </form>
-          <p className="text-green-200 text-[11px] mt-3">No spam. Unsubscribe anytime.</p>
+          <SubscribeForm variant="bottom" />
         </div>
       </section>
 
