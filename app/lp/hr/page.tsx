@@ -142,15 +142,28 @@ export default function HRLandingPage() {
 
       {/* Social proof */}
       <section className="px-4 py-12 max-w-2xl mx-auto text-center">
-        <div className="flex items-center justify-center gap-1 mb-2">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className="text-yellow-400 text-lg">★</span>
-          ))}
+        <h2 className="text-xl font-bold text-gray-900 mb-8">What customers are saying</h2>
+        <div className="grid sm:grid-cols-2 gap-4 mb-8 text-left">
+          <div className="border border-[#e8e8e8] rounded-lg p-4">
+            <div className="flex items-center gap-1 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-yellow-400">★</span>
+              ))}
+            </div>
+            <p className="text-gray-700 text-sm italic mb-2">&ldquo;Very helpful tool for everyone.&rdquo;</p>
+            <p className="text-xs text-gray-400">— Djessica, verified Etsy buyer · Oct 2025</p>
+          </div>
+          <div className="border border-[#e8e8e8] rounded-lg p-4">
+            <div className="flex items-center gap-1 mb-2">
+              {[...Array(4)].map((_, i) => (
+                <span key={i} className="text-yellow-400">★</span>
+              ))}
+              <span className="text-gray-300">★</span>
+            </div>
+            <p className="text-gray-700 text-sm italic mb-2">&ldquo;Exactly what I was looking for!&rdquo;</p>
+            <p className="text-xs text-gray-400">— Hayley, verified Etsy buyer · Sep 2025</p>
+          </div>
         </div>
-        <p className="text-gray-700 text-sm italic mb-2 max-w-md mx-auto">
-          &ldquo;Exactly what I needed. Saved me hours of setup time and I didn&apos;t have to pay for another HR tool.&rdquo;
-        </p>
-        <p className="text-xs text-gray-400">— Etsy customer review</p>
 
         <div className="flex items-center justify-center gap-6 mt-8 text-center">
           <div>
