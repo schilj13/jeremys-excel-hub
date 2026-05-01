@@ -173,7 +173,7 @@ export default function ExcelLayout({ children }: { children: React.ReactNode })
       </div>
 
       {/* ── Sheet Tabs ── */}
-      <div className="bg-[#f3f2f1] border-t border-[#d1d1d1] h-7 flex items-end flex-shrink-0 overflow-x-auto">
+      <div className="bg-[#f3f2f1] border-t border-[#d1d1d1] h-10 sm:h-7 flex items-end flex-shrink-0 overflow-x-auto">
         <div className="flex items-end h-full px-1 gap-0.5">
           {NAV.map(item => {
             const active = pathname === item.href
@@ -181,7 +181,7 @@ export default function ExcelLayout({ children }: { children: React.ReactNode })
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-1 px-2 sm:px-3 h-6 text-[10px] sm:text-[11px] border border-b-0 rounded-t whitespace-nowrap transition-colors flex-shrink-0 ${
+                className={`flex items-center gap-1.5 px-3 sm:px-3 h-9 sm:h-6 text-xs sm:text-[11px] border border-b-0 rounded-t whitespace-nowrap transition-colors flex-shrink-0 ${
                   active
                     ? 'bg-white border-[#d1d1d1] text-[#217346] font-semibold'
                     : 'bg-[#e0e0e0] border-[#d1d1d1] text-gray-600 hover:bg-gray-100'
