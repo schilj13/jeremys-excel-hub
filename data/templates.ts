@@ -56,7 +56,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/1877838213/hr-employee-management-spreadsheet',
-    image: 'https://i.etsystatic.com/57834220/r/il/ab107e/6974681340/il_340x270.6974681340_5hqt.jpg',
+    image: '/templates/hr-employee-management.webp',
     featured: true,
     bestseller: true,
   },
@@ -100,7 +100,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/1890221647/employee-onboarding-template-tracking',
-    image: 'https://i.etsystatic.com/57834220/r/il/7e4401/6774194825/il_340x270.6774194825_1rqb.jpg',
+    image: '/templates/employee-onboarding.avif',
     featured: true,
     bestseller: true,
   },
@@ -144,7 +144,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4460883931/pto-tracker-spreadsheet-employee',
-    image: 'https://i.etsystatic.com/57834220/r/il/39af91/7779734867/il_340x270.7779734867_c8pd.jpg',
+    image: '/templates/pto-tracker.webp',
   },
   {
     slug: 'hr-bundle',
@@ -187,7 +187,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4482536270/hr-template-bundle-digital-download',
-    image: 'https://i.etsystatic.com/57834220/r/il/1a54a8/7874517856/il_340x270.7874517856_485b.jpg',
+    image: '/templates/hr-bundle.webp',
     featured: true,
   },
   {
@@ -230,7 +230,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4458073548/employee-review-template-digital',
-    image: 'https://i.etsystatic.com/57834220/r/il/2e76b7/7711959942/il_340x270.7711959942_qu83.jpg',
+    image: '/templates/employee-review.webp',
   },
   {
     slug: 'employee-database',
@@ -272,7 +272,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4491736035/employee-database-template-staff-tracker',
-    image: 'https://i.etsystatic.com/57834220/r/il/4d23f9/7932932932/il_340x270.7932932932_29jz.jpg',
+    image: '/templates/employee-database.webp',
   },
   {
     slug: 'vacation-tracker',
@@ -314,7 +314,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4323845246/vacation-tracking-template-excel',
-    image: 'https://i.etsystatic.com/57834220/r/il/e1c845/7006056563/il_340x270.7006056563_hhvy.jpg',
+    image: '/templates/vacation-tracker.webp',
   },
   {
     slug: 'employee-training',
@@ -356,7 +356,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4324113988/employee-training-tracker-system',
-    image: 'https://i.etsystatic.com/57834220/r/il/8a6aa9/7007462203/il_340x270.7007462203_p0q0.jpg',
+    image: '/templates/employee-training.webp',
   },
   {
     slug: 'attendance-tracker',
@@ -398,7 +398,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4325149741/employee-attendance-tracker-excel-hr',
-    image: 'https://i.etsystatic.com/57834220/r/il/492f15/7012887223/il_340x270.7012887223_42yv.jpg',
+    image: '/templates/attendance-tracker.avif',
   },
   {
     slug: 'hr-evaluation',
@@ -440,7 +440,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4322232109/hr-evaluation-template-rating-system',
-    image: 'https://i.etsystatic.com/57834220/r/il/90d32c/6949154906/il_340x270.6949154906_4qx8.jpg',
+    image: '/templates/hr-evaluation.avif',
   },
   {
     slug: 'employee-timesheet',
@@ -482,7 +482,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4318904739/employee-timesheet-template-hour',
-    image: 'https://i.etsystatic.com/57834220/r/il/60f67a/6979453339/il_340x270.6979453339_72k9.jpg',
+    image: '/templates/employee-timesheet.avif',
   },
   {
     slug: 'candidate-evaluation',
@@ -524,7 +524,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/1889805519/candidate-evaluation-tracker-hiring',
-    image: 'https://i.etsystatic.com/57834220/r/il/99b4c4/6772008007/il_340x270.6772008007_cxl3.jpg',
+    image: '/templates/candidate-evaluation.avif',
   },
   {
     slug: 'weekly-budget',
@@ -566,7 +566,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/1890763491/weekly-budget-template-digital-download',
-    image: 'https://i.etsystatic.com/57834220/r/il/4f8921/6776975373/il_340x270.6776975373_a346.jpg',
+    image: '/templates/weekly-budget.webp',
   },
   {
     slug: 'net-worth-calculator',
@@ -608,7 +608,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4337790456/financial-net-worth-calculator-excel',
-    image: 'https://i.etsystatic.com/57834220/r/il/e1a677/7080209139/il_340x270.7080209139_amr6.jpg',
+    image: '/templates/net-worth-calculator.webp',
   },
   {
     slug: 'pl-statement',
@@ -650,7 +650,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4376794388/business-finance-template-excel',
-    image: 'https://i.etsystatic.com/57834220/r/il/e26a6a/7282342299/il_340x270.7282342299_ab5k.jpg',
+    image: '/templates/pl-statement.jpg',
   },
   {
     slug: 'workout-tracker',
@@ -692,7 +692,7 @@ export const TEMPLATES: Template[] = [
       },
     ],
     etsyUrl: 'https://www.etsy.com/listing/4361915269/digital-workout-tracker-fitness',
-    image: 'https://i.etsystatic.com/57834220/r/il/450445/7160429116/il_340x270.7160429116_19s3.jpg',
+    image: '/templates/workout-tracker.jpg',
   },
 ]
 
