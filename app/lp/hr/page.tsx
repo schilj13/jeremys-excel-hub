@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
+  const router = useRouter()
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -18,22 +20,10 @@ function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
         body: JSON.stringify({ email, firstName }),
       })
       if (!res.ok) throw new Error()
-      setStatus('success')
+      router.push('/thank-you')
     } catch {
       setStatus('error')
     }
-  }
-
-  if (status === 'success') {
-    return (
-      <div className={`text-center py-4 ${variant === 'bottom' ? 'text-white' : 'text-[#217346]'}`}>
-        <p className="text-2xl mb-1">🎉</p>
-        <p className="font-bold text-lg">You&apos;re in!</p>
-        <p className={`text-sm mt-1 ${variant === 'bottom' ? 'text-green-100' : 'text-gray-600'}`}>
-          Check your inbox — the template is on its way.
-        </p>
-      </div>
-    )
   }
 
   if (variant === 'hero') {
