@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
   }
 
   const { error } = await resend.emails.send({
-    from: 'Jeremy\'s Excel Hub <coaching@jeremyexcel.com>',
+    from: 'Jeremy Excel <coaching@jeremyexcel.com>',
     to: 'schilj13@outlook.com',
     replyTo: email,
     subject: `Coaching inquiry: ${topic ?? 'General'}`,

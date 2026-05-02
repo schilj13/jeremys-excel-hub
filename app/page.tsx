@@ -44,7 +44,7 @@ export default function Home() {
 
       {/* Hero */}
       <div className="bg-[#e8f5ee] border border-[#217346] rounded p-4 sm:p-6">
-        <p className="text-[10px] text-[#217346] font-mono mb-2 opacity-70">A1 — Jeremy&apos;s Excel Hub</p>
+        <p className="text-[10px] text-[#217346] font-mono mb-2 opacity-70">A1 — Jeremy Excel</p>
         <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2 leading-tight">
           Master Excel.<br />Build Your Business.
         </h1>

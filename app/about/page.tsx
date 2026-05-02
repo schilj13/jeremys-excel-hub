@@ -35,7 +35,7 @@ export default function About() {
           </h1>
           <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
             Analytics professional with 10+ years of experience building financial models, reporting platforms,
-            and data systems. I created Jeremy&apos;s Excel Hub to share what I&apos;ve learned — so you can
+            and data systems. I created Jeremy Excel to share what I&apos;ve learned — so you can
             work faster, smarter, and stop dreading spreadsheets.
           </p>
         </div>
