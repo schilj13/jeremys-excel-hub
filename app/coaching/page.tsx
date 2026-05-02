@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 
 const SERVICES = [
@@ -87,15 +88,24 @@ export default function CoachingPage() {
     <div className="p-3 sm:p-5 max-w-4xl mx-auto space-y-3 sm:space-y-5">
 
       {/* Hero */}
-      <div className="bg-[#e8f5ee] border border-[#217346] rounded p-4 sm:p-6">
-        <p className="text-[10px] text-[#217346] font-mono mb-2 opacity-70">A1 — Coaching</p>
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-          1-on-1 Excel Coaching
-        </h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
-          10 years of building financial models and BI platforms in the real world — now available to you directly.
-          Whether you need a model built, a dashboard cleaned up, or just want to get better at Excel fast.
-        </p>
+      <div className="bg-[#e8f5ee] border border-[#217346] rounded p-4 sm:p-6 flex gap-4 sm:gap-6 items-center">
+        <Image
+          src="/jeremy.jpg"
+          alt="Jeremy Schilling"
+          width={80}
+          height={80}
+          className="rounded-full flex-shrink-0 border-2 border-[#217346] object-cover w-16 h-16 sm:w-20 sm:h-20"
+        />
+        <div>
+          <p className="text-[10px] text-[#217346] font-mono mb-2 opacity-70">A1 — Coaching</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 leading-tight">
+            1-on-1 Excel Coaching
+          </h1>
+          <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
+            10 years of building financial models and BI platforms in the real world — now available to you directly.
+            Whether you need a model built, a dashboard cleaned up, or just want to get better at Excel fast.
+          </p>
+        </div>
       </div>
 
       {/* Services grid */}
