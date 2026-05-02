@@ -86,8 +86,8 @@ export default function ThankYouPage() {
         </p>
         <div className="flex items-center gap-4">
           <div className="flex items-baseline gap-1.5">
-            <span className="text-lg font-bold text-[#217346]">$24.99</span>
-            <span className="text-gray-400 line-through text-xs">$41.65</span>
+            <span className="text-lg font-bold text-[#217346]">$37.00</span>
+            <span className="text-gray-400 line-through text-xs">$61.66</span>
           </div>
           <a
             href={HR_BUNDLE_ETSY_URL}

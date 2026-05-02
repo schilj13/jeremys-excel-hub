@@ -149,8 +149,8 @@ export const TEMPLATES: Template[] = [
   {
     slug: 'hr-bundle',
     name: 'HR Template Bundle',
-    price: 24.99,
-    originalPrice: 41.65,
+    price: 37.00,
+    originalPrice: 61.66,
     category: 'hr',
     tagline: "Every HR template you need in one discounted bundle — save 40% vs. buying individually.",
     description:
