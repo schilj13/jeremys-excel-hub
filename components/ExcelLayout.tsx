@@ -115,7 +115,7 @@ export default function ExcelLayout({ children }: { children: React.ReactNode })
         {/* Ribbon Body — desktop only */}
         <div className="hidden sm:flex items-stretch border-t border-[#d1d1d1] px-2">
           <div className="flex items-center gap-1 px-2 py-1 border-r border-[#d1d1d1]">
-            <RibbonButton href="https://youtube.com/@jeremysexcelhub" icon="▶" label="Subscribe" external />
+            <RibbonButton href="https://youtube.com/@bigdogsexcelerator9853" icon="▶" label="Subscribe" external />
             <RibbonButton href="/free" icon="⬇" label="Download" />
           </div>
           <div className="flex items-center gap-1 px-2 py-1 border-r border-[#d1d1d1]">

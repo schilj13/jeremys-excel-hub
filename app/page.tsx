@@ -32,7 +32,7 @@ const FEATURES = [
 ]
 
 const STATS = [
-  { num: 1, platform: 'YouTube', content: '50+ tutorials', action: 'Subscribe', href: 'https://youtube.com/@jeremysexcelhub', external: true },
+  { num: 1, platform: 'YouTube', content: '50+ tutorials', action: 'Subscribe', href: 'https://youtube.com/@bigdogsexcelerator9853', external: true },
   { num: 2, platform: 'Etsy Shop', content: '16 templates', action: 'Shop Now', href: '/templates', external: false },
   { num: 3, platform: 'Newsletter', content: 'Weekly Excel tips', action: 'Sign Up', href: '/free', external: false },
   { num: 4, platform: 'Coaching', content: '1-on-1 sessions', action: 'Book Now', href: '/coaching', external: false },
