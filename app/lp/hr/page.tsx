@@ -20,9 +20,6 @@ function SubscribeForm({ variant }: { variant: 'hero' | 'bottom' }) {
         body: JSON.stringify({ email, firstName }),
       })
       if (!res.ok) throw new Error()
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'Lead')
-      }
       router.push('/thank-you')
     } catch {
       setStatus('error')

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import PixelLead from '@/components/PixelLead'
 
 export const metadata: Metadata = {
   title: 'Your Free Template | Jeremy Excel',
@@ -12,6 +13,7 @@ const HR_BUNDLE_ETSY_URL = 'https://www.etsy.com/listing/4482536270/hr-template-
 export default function ThankYouPage() {
   return (
     <div className="p-3 sm:p-5 max-w-2xl mx-auto space-y-4">
+      <PixelLead />
 
       {/* Hero cell */}
       <div className="bg-[#e8f5ee] border border-[#217346] rounded p-6 text-center">
