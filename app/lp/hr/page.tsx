@@ -135,7 +135,7 @@ export default function HRLandingPage() {
             {
               icon: '📋',
               title: 'HR & Employee Management Spreadsheet',
-              desc: 'A $24.99 template — yours free. Covers hiring, onboarding, attendance, payroll, and performance reviews in one workbook.',
+              desc: 'A $37.00 template — yours free. Covers hiring, onboarding, attendance, payroll, and performance reviews in one workbook.',
             },
             {
               icon: '✅',
