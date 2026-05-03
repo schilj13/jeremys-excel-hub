@@ -19,7 +19,7 @@ export const TEMPLATES: Template[] = [
     slug: 'hr-employee-management',
     name: 'HR & Employee Management Spreadsheet',
     price: 14.99,
-    originalPrice: 24.99,
+    originalPrice: 37.00,
     category: 'hr',
     tagline: 'The all-in-one HR system for small businesses — no software required.',
     description:
