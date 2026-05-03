@@ -1,8 +1,7 @@
 'use client'
 
-import Script from 'next/script'
-import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 const PIXEL_ID = '2975230469406065'
 
@@ -10,27 +9,31 @@ export default function FacebookPixel() {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !(window as any).fbq) return
+    if (!(window as any).fbq) {
+      const fbq: any = function (...args: any[]) {
+        fbq.callMethod ? fbq.callMethod.apply(fbq, args) : fbq.queue.push(args)
+      }
+      fbq.push = fbq
+      fbq.loaded = true
+      fbq.version = '2.0'
+      fbq.queue = []
+      ;(window as any).fbq = fbq
+      ;(window as any)._fbq = fbq
+
+      const script = document.createElement('script')
+      script.async = true
+      script.src = 'https://connect.facebook.net/en_US/fbevents.js'
+      document.head.appendChild(script)
+
+      fbq('init', PIXEL_ID)
+    }
+
+    ;(window as any).fbq('track', 'PageView')
+
     if (pathname === '/thank-you') {
-      (window as any).fbq('track', 'Lead')
+      ;(window as any).fbq('track', 'Lead')
     }
   }, [pathname])
 
-  return (
-    <Script
-      id="fb-pixel"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-          n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-          document,'script','https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${PIXEL_ID}');
-          fbq('track', 'PageView');
-        `,
-      }}
-    />
-  )
+  return null
 }
