@@ -30,7 +30,7 @@ export default function FacebookPixel() {
 
     ;(window as any).fbq('track', 'PageView')
 
-    if (pathname === '/thank-you') {
+    if (pathname === '/thank-you' || pathname === '/free/thank-you') {
       ;(window as any).fbq('track', 'Lead')
     }
   }, [pathname])
