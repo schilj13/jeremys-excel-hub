@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import PixelLead from '@/components/PixelLead'
+import DownloadButton from '@/components/DownloadButton'
 
 export const metadata: Metadata = {
   title: 'Your Free Template | Jeremy Excel',
@@ -47,13 +48,7 @@ export default function ThankYouPage() {
             <p className="text-xs text-gray-500 mb-4 leading-relaxed">
               Excel workbook — onboarding tasks, orientation schedule, 30/60/90-day goals, and equipment log. Works on Mac &amp; PC.
             </p>
-            <a
-              href="/new-hire-checklist.xlsx"
-              download
-              className="inline-flex items-center gap-2 bg-[#217346] hover:bg-[#185a34] text-white font-semibold px-6 py-3 rounded text-sm transition-colors"
-            >
-              ⬇ Download Now — It&apos;s Free
-            </a>
+            <DownloadButton />
           </div>
         </div>
       </div>
