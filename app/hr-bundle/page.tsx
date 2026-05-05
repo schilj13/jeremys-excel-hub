@@ -71,9 +71,9 @@ export default function HRBundlePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#d0d0d0]">
           {[
-            { src: '/templates/hr-bundle-1.jpg', alt: 'Inside the templates — sample views' },
-            { src: '/templates/hr-bundle-2.jpg', alt: 'HR & Employee Management Bundle overview' },
-            { src: '/templates/hr-bundle-3.jpg', alt: "What's included in the bundle" },
+            { src: '/templates/hr-bundle-1.png', alt: 'Inside the templates — sample views' },
+            { src: '/templates/hr-bundle-2.png', alt: 'HR & Employee Management Bundle overview' },
+            { src: '/templates/hr-bundle-3.png', alt: "What's included in the bundle" },
           ].map(img => (
             <div key={img.src} className="relative bg-[#f9f9f9] aspect-square">
               <Image
