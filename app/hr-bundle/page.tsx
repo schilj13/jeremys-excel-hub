@@ -11,9 +11,7 @@ const TEMPLATES = [
 ]
 
 const REVIEWS = [
-  { name: 'Djessica', stars: 5, text: 'Incredibly well-designed. Saved me hours of setup time — everything I needed was already built in.' },
-  { name: 'Hayley', stars: 4, text: 'Really solid templates. The onboarding checklist alone was worth it for our small team.' },
-  { name: 'Marcus', stars: 5, text: 'Bought this for our HR team and they loved it. Professional quality, easy to customize.' },
+  { name: 'Djessica', stars: 5, text: 'Very helpful tool for everyone.' },
 ]
 
 const FAQS = [
