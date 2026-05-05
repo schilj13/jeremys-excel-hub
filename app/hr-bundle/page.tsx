@@ -10,9 +10,6 @@ const TEMPLATES = [
   { category: 'Offboarding', items: ['Employee Offboarding Checklist', 'Employee Transition Template'] },
 ]
 
-const REVIEWS = [
-  { name: 'Djessica', stars: 5, text: 'Very helpful tool for everyone.' },
-]
 
 const FAQS = [
   { q: 'What format are the templates?', a: 'All 15 templates are Excel (.xlsx) files. They work on Mac and PC with no add-ins or subscriptions required.' },
@@ -47,8 +44,6 @@ export default function HRBundlePage() {
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <div>
             <span className="text-3xl font-bold text-[#217346]">$37</span>
-            <span className="text-gray-400 line-through text-sm ml-2">$61.66</span>
-            <span className="ml-2 text-[11px] bg-[#217346] text-white px-2 py-0.5 rounded">Save 40%</span>
           </div>
           <div className="text-[11px] text-gray-500">One-time payment · Instant download · Works on Mac & PC</div>
         </div>
@@ -126,21 +121,12 @@ export default function HRBundlePage() {
         </div>
       </div>
 
-      {/* Reviews */}
-      <div className="border border-[#d1d1d1] rounded overflow-hidden">
-        <div className="bg-[#f2f2f2] border-b border-[#d1d1d1] px-3 py-1.5 text-[11px] text-gray-500 font-semibold tracking-wide">
-          REVIEWS
-        </div>
-        <div className="divide-y divide-[#f0f0f0]">
-          {REVIEWS.map(r => (
-            <div key={r.name} className="p-4 bg-white">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-yellow-400 text-xs">{'★'.repeat(r.stars)}{'☆'.repeat(5 - r.stars)}</span>
-                <span className="text-[11px] font-semibold text-gray-700">{r.name}</span>
-              </div>
-              <p className="text-[11px] text-gray-600 leading-relaxed">{r.text}</p>
-            </div>
-          ))}
+      {/* Guarantee */}
+      <div className="border border-[#217346] rounded p-4 bg-white flex items-start gap-3">
+        <span className="text-2xl flex-shrink-0">🛡️</span>
+        <div>
+          <p className="text-sm font-semibold text-gray-900 mb-1">30-Day Money-Back Guarantee</p>
+          <p className="text-[11px] text-gray-600 leading-relaxed">Not what you expected? Email me within 30 days and I&apos;ll refund you in full — no questions asked. <a href="mailto:jeremy@jeremyexcel.com" className="text-[#217346] underline">jeremy@jeremyexcel.com</a></p>
         </div>
       </div>
 
