@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 const FEATURES = [
@@ -39,6 +42,21 @@ const STATS = [
 ]
 
 export default function Home() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle')
+
+  async function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault()
+    if (!email) return
+    setStatus('loading')
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    })
+    setStatus(res.ok ? 'done' : 'error')
+  }
+
   return (
     <div className="p-3 sm:p-5 max-w-5xl mx-auto space-y-3 sm:space-y-5">
 
@@ -74,23 +92,40 @@ export default function Home() {
       </div>
 
       {/* Newsletter */}
-      <form action="/free" method="get" className="flex items-center border border-[#d1d1d1] rounded bg-white overflow-hidden shadow-sm">
-        <div className="bg-[#f2f2f2] border-r border-[#d1d1d1] px-2 sm:px-3 py-2 text-sm text-[#217346] font-bold italic flex-shrink-0">
-          fx
-        </div>
-        <input
-          type="email"
-          name="email"
-          placeholder='=SUBSCRIBE("your@email.com")'
-          className="flex-1 px-2 sm:px-3 py-2 text-xs sm:text-sm font-mono text-[#0078d4] outline-none placeholder:text-[#0078d4]/50 bg-white min-w-0"
-        />
-        <button
-          type="submit"
-          className="bg-[#217346] text-white px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium hover:bg-[#185a34] transition-colors flex-shrink-0"
-        >
-          Subscribe
-        </button>
-      </form>
+      <div className="space-y-1.5">
+        <p className="text-[11px] text-gray-500 px-1">
+          Weekly Excel tips, shortcuts, and templates — straight to your inbox. Free.
+        </p>
+        {status === 'done' ? (
+          <div className="flex items-center border border-[#217346] rounded bg-[#e8f5ee] px-4 py-2.5 text-sm text-[#217346] font-medium">
+            You&apos;re in! Check your inbox to confirm.
+          </div>
+        ) : (
+          <form onSubmit={handleSubscribe} className="flex items-center border border-[#d1d1d1] rounded bg-white overflow-hidden shadow-sm">
+            <div className="bg-[#f2f2f2] border-r border-[#d1d1d1] px-2 sm:px-3 py-2 text-sm text-[#217346] font-bold italic flex-shrink-0">
+              fx
+            </div>
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder='=SUBSCRIBE("your@email.com")'
+              className="flex-1 px-2 sm:px-3 py-2 text-xs sm:text-sm font-mono text-[#0078d4] outline-none placeholder:text-[#0078d4]/50 bg-white min-w-0"
+              required
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="bg-[#217346] text-white px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium hover:bg-[#185a34] transition-colors flex-shrink-0 disabled:opacity-60"
+            >
+              {status === 'loading' ? '...' : 'Subscribe'}
+            </button>
+          </form>
+        )}
+        {status === 'error' && (
+          <p className="text-[11px] text-red-500 px-1">Something went wrong — try again or email jeremy@jeremyexcel.com.</p>
+        )}
+      </div>
 
       {/* Feature Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#d0d0d0] border border-[#d0d0d0] rounded overflow-hidden">
