@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function HRBundleSuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
   const [status, setStatus] = useState<'loading' | 'verified' | 'failed'>('loading')
@@ -110,5 +110,17 @@ export default function HRBundleSuccessPage() {
       </div>
 
     </div>
+  )
+}
+
+export default function HRBundleSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="p-5 max-w-2xl mx-auto text-center mt-10">
+        <p className="text-sm text-gray-500">Loading...</p>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   )
 }
