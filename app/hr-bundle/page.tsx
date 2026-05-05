@@ -19,7 +19,7 @@ const REVIEWS = [
 const FAQS = [
   { q: 'What format are the templates?', a: 'All 15 templates are Excel (.xlsx) files. They work on Mac and PC with no add-ins or subscriptions required.' },
   { q: 'Can I customize them for my business?', a: 'Yes — every field, tab, and formula is unlocked. Add your logo, rename tabs, adjust for your team size.' },
-  { q: 'Do the templates work together?', a: 'Yes. Employee names entered in the Database flow through to the Timesheet, Attendance Tracker, and Payroll Template. It\'s built as a system.' },
+  { q: 'Do the templates work together?', a: 'Each template is a standalone file you can use independently. They\'re organized into categories so you can pick and use only what your team needs.' },
   { q: 'Is this a one-time purchase?', a: 'Yes. Pay once, download instantly, use forever. No subscriptions, no recurring fees.' },
   { q: 'What if I need help with the templates?', a: 'Just reply to any email or use the contact form on the site. I\'m happy to help.' },
 ]
@@ -64,18 +64,26 @@ export default function HRBundlePage() {
         <p className="text-[10px] text-gray-400 mt-2">Secure checkout via Stripe. Instant download after payment.</p>
       </div>
 
-      {/* Template preview image */}
+      {/* Template preview images */}
       <div className="border border-[#d1d1d1] rounded overflow-hidden">
         <div className="bg-[#f2f2f2] border-b border-[#d1d1d1] px-3 py-1.5 text-[11px] text-gray-500 font-semibold tracking-wide">
           PREVIEW
         </div>
-        <div className="relative w-full h-48 sm:h-64 bg-[#f9f9f9]">
-          <Image
-            src="/templates/hr-bundle.webp"
-            alt="HR Template Bundle Preview"
-            fill
-            className="object-contain p-4"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#d0d0d0]">
+          {[
+            { src: '/templates/hr-bundle-1.jpg', alt: 'Inside the templates — sample views' },
+            { src: '/templates/hr-bundle-2.jpg', alt: 'HR & Employee Management Bundle overview' },
+            { src: '/templates/hr-bundle-3.jpg', alt: "What's included in the bundle" },
+          ].map(img => (
+            <div key={img.src} className="relative bg-[#f9f9f9] aspect-square">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
